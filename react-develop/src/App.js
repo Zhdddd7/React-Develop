@@ -1,37 +1,23 @@
 import React from 'react';
-import './App.css';
-const brawler0 = {
-    "Name": "Shelly",
-    "Rarity": "Basic",
-    "Movement": 770,
-    "HP": 7400,
-    "Attack" : 600,
-    "Pic": 'https://media.brawltime.ninja/brawlers/shelly/model.webp?size=100'}
-const App = () => {
-    return (
-        <div className='app'>
-            <h1>BrawlStar</h1>
-
-            <div className='container'>
-                <div className='brawler'>
-                    <div>
-                        <img 
-                            src ={ brawler0.Pic} 
-                            alt ={brawler0.Name}/>
-                        </div>
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Detail from './Detail'
 
 
-
-                    </div>
-
-
-            </div>
+function App() {
+  return (
+    <Router>
+        <div>
+            <Home />
+            <Routes>
+              <Route>
+                <Detail/>
+              </Route>
+            </Routes>
         </div>
 
-       
-
-        
-    );
+    </Router>
+  );
 }
 
 export default App;
