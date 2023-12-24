@@ -1,6 +1,6 @@
 import React from "react";
 
-const Brawlers = ( {brawler0} ) => {
+const Brawlers = ( {brawler} ) => {
     
     return (
        
@@ -8,13 +8,13 @@ const Brawlers = ( {brawler0} ) => {
         <div>
             
                 <img 
-                    src ={brawler0.Pic} 
-                    alt ={brawler0.Name}/>
+                    src ={brawler.Pic} 
+                    alt ={brawler.Name}/>
         </div>
         
         <div>
-            <span>{brawler0.Rarity}</span>
-            <h3>{brawler0.Name}</h3>
+            <span>{brawler.Rarity}</span>
+            <h3>{brawler.Name}</h3>
         </div>
 
     </div>
