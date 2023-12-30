@@ -13,7 +13,7 @@ const BrawlerDetails = ( {brawler} ) => {
 
     </div>
 
-    );
+    );  
 }
 
 export default BrawlerDetails
