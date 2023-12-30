@@ -1,32 +1,37 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
-* {
-  margin: 0;
-  border: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --font-roboto: "Roboto Slab", serif;
-  --font-raleway: "Raleway", sans-serif;
-}
 
 body {
   font-family: var(--font-roboto);
-  background-color: #bfbfb7;
+  background-image: url('https://wallpaperbat.com/img/857688-brawl-stars-desktop-4k-wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-color: #c3c39d;
+}
+ 
+.container {
+  width: 220px;
+  text-align: center;
+  color: rgb(69, 32, 80);
 }
 
-.app {
+.brawler {
+  width: 220px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+
+/* .app {
   padding: 4rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
+} */
 
-h1 {
+/* h1 {
   font-size: 3rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
@@ -38,9 +43,9 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
-}
+} */
 
-h3 {
+/* h3 {
   font-size: 1.5rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
@@ -52,9 +57,9 @@ h3 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
-}
+} */
 
-span {
+/* span {
   font-size: 1rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
@@ -66,10 +71,10 @@ span {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
-}
+} */
 
 
-.container {
+/* .container {
   width: 100%;
   margin-top: 2rem;
 
@@ -174,4 +179,4 @@ span {
     width: "100%";
     margin: 1rem;
   }
-}
+} */
