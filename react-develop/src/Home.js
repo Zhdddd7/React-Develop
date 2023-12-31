@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import './App.css';
-import Brawlers from './Brawlers';
-import { BrawlerList } from './BrawlerData';
+import Brawler from './Brawler';
+import { BrawlerList } from './BrawlerList';
    
     
-    function Home(){
-        
+    const Home = ({brawlers}) => {
+        //click to jump to the new page
         const navigate= useNavigate();
+        
+
     return (
         <div>
             <h1>BrawlStar</h1>
@@ -18,7 +19,7 @@ import { BrawlerList } from './BrawlerData';
             <div className='container' onClick={() => navigate('/Detail')}>
            
                 {BrawlerList.map((brawler) => (
-                < Brawlers brawler ={brawler}/>
+                < Brawler brawler ={brawler}/>
                 ))}
             
             </div>): 

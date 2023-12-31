@@ -1,13 +1,15 @@
 
 export const BrawlerList = [
-    {"Name": "Shelly",
+    {id: 1,
+    "Name": "Shelly",
     "Rarity": "Basic",
     "Movement": 770,
     "HP": 7400,
     "Attack" : 600,
     "Pic": 'https://media.brawltime.ninja/brawlers/shelly/model.webp?size=100'},
 
-    {"Name": "Dynamike",
+    {id: 2,
+    "Name": "Dynamike",
     "Rarity": "Super Rare",
     "Movement": 770,
     "HP": 5600,

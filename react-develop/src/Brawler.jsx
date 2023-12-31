@@ -1,12 +1,13 @@
 import React from "react";
-
-const Brawlers = ( {brawler} ) => {
+import { Link } from "react-router-dom";
+const Brawler = ( {brawler} ) => {
     
     return (
        
     <div className='brawler'>
-        <div>
-            
+        
+        <Link key ={brawler.id} to= {'/brawler/${brawler.id}'}>
+        <div>    
                 <img 
                     src ={brawler.Pic} 
                     alt ={brawler.Name}/>
@@ -16,10 +17,11 @@ const Brawlers = ( {brawler} ) => {
             <span>{brawler.Rarity}</span>
             <h3>{brawler.Name}</h3>
         </div>
-
+        </Link>
+        
     </div>
 
     );
 }
 
-export default Brawlers
+export default Brawler

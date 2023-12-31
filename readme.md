@@ -16,8 +16,16 @@ Now a new project folder is established. You can check it out on a browser using
 And you will see the default static website of your react project.
 
 ## useState
-## useEffect
-## Use CSS to characterize
+useState is a React Hook that lets you add a state variable to your component.   
+useState returns an array with exactly two values:
+
+* The current state. During the first render, it will match the initialState you have passed.
+* The set function that lets you update the state to a different value and trigger a re-render.
+## share state between different components
+Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their closest common parent, and then pass it down to them via props. 
+## use CSS to characterize
+
+## Reference
 
 
 

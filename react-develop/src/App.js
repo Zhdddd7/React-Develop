@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home';
-import Detail from './Detail'
+import BrawlerDetail from './BrawlerDetail'
+import BrawlerList from './BrawlerList';
 
 
 function App() {
@@ -10,9 +11,9 @@ function App() {
         <div>
             <Routes>
 
-                <Route path="/" element={<Home />}/>
+                <Route path="/" element={<Home brawlers={brawlers}/>}/>
 
-                <Route path= "/detail" element={<Detail/>} />
+                <Route path="/brawler/:brawlerId" element={<BrawlerDetail brawlers={brawlers}/>} />
                    
                
             </Routes>
