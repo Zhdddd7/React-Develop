@@ -16,3 +16,5 @@ export const BrawlerList = [
     "Attack" : 1600,
     "Pic": 'https://media.brawltime.ninja/brawlers/dynamike/model.webp?size=150'}
 ];
+
+export default BrawlerList;

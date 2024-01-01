@@ -3,10 +3,13 @@
 
 
 body {
-  font-family: var(--font-roboto);
+  /* font-family: var(--font-roboto); */
   background-image: url('https://wallpaperbat.com/img/857688-brawl-stars-desktop-4k-wallpaper.jpg');
   background-repeat: no-repeat;
   background-color: #c3c39d;
+  font-size: 15px;
+  
+
 }
  
 .container {
@@ -21,162 +24,12 @@ body {
   border-radius: 5px;
 }
 
-
-/* .app {
-  padding: 4rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-} */
-
-/* h1 {
-  font-size: 3rem;
-  letter-spacing: 0.9px;
-  background: linear-gradient(
-    90deg,
-    rgb(243, 138, 52) 0%,
-    rgba(215, 146, 89, 0) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  width: fit-content;
-} */
-
-/* h3 {
-  font-size: 1.5rem;
-  letter-spacing: 0.9px;
-  background: linear-gradient(
-    90deg,
-    rgb(248, 247, 247) 0%,
-    rgba(240, 237, 235, 0) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  width: fit-content;
-} */
-
-/* span {
-  font-size: 1rem;
-  letter-spacing: 0.9px;
-  background: linear-gradient(
-    90deg,
-    rgb(243, 248, 248) 0%,
-    rgba(215, 146, 89, 0) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  width: fit-content;
-} */
-
-
-/* .container {
-  width: 100%;
-  margin-top: 2rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.brawlerlabel{
+  color:#c3c39d;
+  font-family: "Sofia", sans-serif;
+  
 }
 
-.brawler {
-  width: 150px;
-  height: 200px;
-  margin: 1.5rem;
-
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  border: none;
-
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
-  box-shadow: 0px 13px 10px -7px rgba(176, 111, 14, 0.1);
+.backtomenu{
+  color:aqua;
 }
-
-.brawler div:nth-of-type(1) {
-  position: absolute;
-  padding: 16px;
-  width: 100%;
-  opacity: 2;
-  top: 0;
-  color: #f6f5f4;
-}
-
-.brawler:hover {
-  box-shadow: 0px 30px 18px -8px rgba(12, 9, 0, 0.628);
-  transform: scale(1.05, 1.05);
-}
-
-.brawler div:nth-of-type(2) {
-  width: 100%;
-  height: 100%;
-}
-
-.brawler div:nth-of-type(2) img {
-  height: 100%;
-  width: 100%;
-}
-
-.brawler div:nth-of-type(3) {
-  z-index: 2;
-  background-color: #b6811f;
-  padding: 16px 24px 24px 24px;
-
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-
-.brawler div:nth-of-type(3) span {
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 2px;
-  font-weight: 500;
-  color: #f0f0f0;
-}
-
-.brawler div:nth-of-type(3) h3 {
-  margin-top: 5px;
-  font-family: "Roboto Slab", serif;
-  color: #f9d3b4;
-}
-
-.brawler:hover div:nth-of-type(2) {
-  height: 100%;
-  opacity: 0.3;
-}
-
-.brawler:hover div:nth-of-type(3) {
-  background-color: transparent;
-}
-
-.brawler:hover div:nth-of-type(1) {
-  opacity: 1;
-}
-
-
-@media screen and (max-width: 400px) {
-  .app {
-    padding: 4rem 1rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  .container {
-    margin-top: 2rem;
-  }
-
-  .brawler {
-    width: "100%";
-    margin: 1rem;
-  }
-} */

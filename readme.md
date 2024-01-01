@@ -23,6 +23,20 @@ useState returns an array with exactly two values:
 * The set function that lets you update the state to a different value and trigger a re-render.
 ## share state between different components
 Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their closest common parent, and then pass it down to them via props. 
+
+## use Router to make web page jumps
+```
+<Router>
+        <div>
+            <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path="/brawler/:brawlerId" element={<BrawlerDetail />} />       
+            </Routes>
+        </div>
+
+    </Router>
+```
+use Route path to match different web pages to different components
 ## use CSS to characterize
 
 ## Reference
