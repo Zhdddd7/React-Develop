@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './App.css';
 import {BrawlerList} from './BrawlerList';
 import { DataGrid } from '@mui/x-data-grid';
+import BrawlerRate from './BrawlerRate';
 const BrawlerDetail = () => {
     const { brawlerId } = useParams();
     const brawler = BrawlerList.find(b => b.id === parseInt(brawlerId));
@@ -39,10 +40,9 @@ const BrawlerDetail = () => {
                     pagination: {
                       paginationModel: { page: 0, pageSize: 5 },
                     },
-                  }}
-                  
-                  />
-    </div>
+                  }}/>
+              </div>
+
             </div>
             
             
@@ -54,6 +54,10 @@ const BrawlerDetail = () => {
             </div>
           )
         }
+        <h2>Rate for this brawler!</h2>
+        <BrawlerRate className ='BrawlerRate' 
+        brawler={brawler}
+        />
          <button className='backtomenu'onClick={() => navigate(-1)}>Back to Menu</button>
       </div>
     
