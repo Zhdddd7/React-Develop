@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 
 const BrawlerRate = ({brawler, submitRating}) =>{
+  
     const [rating, setRating] = useState('');
     const handleRatingChange = (e) => {
         setRating(e.target.value);
