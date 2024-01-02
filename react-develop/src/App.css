@@ -11,7 +11,10 @@ body {
   
 
 }
- 
+h1{
+  color:#c7cf32;
+}
+
 .container {
   width: 220px;
   text-align: center;
@@ -31,5 +34,17 @@ body {
 }
 
 .backtomenu{
-  color:aqua;
+  color:rgb(25, 161, 161);
+  background-color: #dde447;
+  border-radius: 5px;
 }
+
+.brawlertable{
+  color:#e4e4e0;
+  
+  /* background-color: aqua; */
+  column-rule-color: #c7cf32;
+  background-color: #5394b2;
+  
+}
+

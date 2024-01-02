@@ -15,7 +15,7 @@ const BrawlerDetail = () => {
       { field: 'Rarity', headerName: 'Rarity', width: 130 },
       {field: 'Movement', headerName: 'Movement', width: 130},
       {field: 'Attack', headerName: 'Attack', width: 70},
-      {field: 'HP', headerName: 'HP', width: 70}
+      {field: 'HP', headerName: 'HP', width: 70,}
 
     ];
 
@@ -31,8 +31,8 @@ const BrawlerDetail = () => {
         {brawler?(
             <div>
               <img src = {brawler.Pic} alt={brawler.Name}/>
-              <div style={{ height: 150, width: '80%' }}>
-                <DataGrid
+              <div style={{ height: 150, width: '80%'}}>
+                <DataGrid className='brawlertable'
                   rows={rows}
                   columns={columns}
                   initialState={{

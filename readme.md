@@ -38,7 +38,18 @@ Sometimes, you want the state of two components to always change together. To do
 ```
 use Route path to match different web pages to different components
 ## use CSS to characterize
-
+We can give each little element a className to match it in .css, which can manage and customize the ui style.
+```
+<button className='backtomenu'onClick={() => navigate(-1)}>Back to Menu</button>
+```
+So this button is having a clssName called 'back ot menu', and so we can adjust the style settings in the .css file.
+```
+.backtomenu{
+  color:rgb(25, 161, 161);
+  background-color: #dde447;
+  border-radius: 5px;
+}
+```
 ## Reference
 
 
