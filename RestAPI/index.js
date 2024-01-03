@@ -1,5 +1,5 @@
 const BrawlerRating = require('./BrawlerRatingModel'); // The model file you just created
-const {connect} =require('./server')
+const {connect} =require('./server');
 
 const express = require('express');
 const bodyParser = require('body-parser');  
@@ -10,11 +10,11 @@ app.use(bodyParser.json());
 
 app.post('/rate-brawler', async (req, res) => {
     try{
-        connect();
+        // connect();
         const { brawlerid, brawlerrating } = req.body;
-        BrawlerRating(2, 's');
+        BrawlerRating(brawlerid, brawlerrating);
        
-    res.status(201).send(`${req.body} is Rating submitted successfully`);
+    res.status(201).send(`Rating submitted successfully`);
     } catch (error) {
     res.status(500).send('Error submitting rating');
   }
