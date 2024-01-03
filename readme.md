@@ -21,7 +21,7 @@ useState returns an array with exactly two values:
 
 * The current state. During the first render, it will match the initialState you have passed.
 * The set function that lets you update the state to a different value and trigger a re-render.
-## share state between different components
+## share states between different components
 Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their closest common parent, and then pass it down to them via props. 
 
 ## use Router to make web page jumps
@@ -49,6 +49,17 @@ So this button is having a clssName called 'back ot menu', and so we can adjust 
   background-color: #dde447;
   border-radius: 5px;
 }
+```
+
+## Nodemon for API monitoring
+When we run an API using node.js, we need to restart the command to watch the API. Here is a more efficient tool: Nodemon, which can keep monitoring the API connection. They refresh while monitoring changes to the .js files.
+we can use the following bash code to install it globally:
+```
+npm i -g nodemon
+```
+and we can start the monitoring using:
+```
+nodemon your_filename.js
 ```
 ## Reference
 
