@@ -1,30 +1,36 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 import Brawler from './Brawler';
 import { BrawlerList } from './BrawlerList';
-   
+import BrawlerRankings from './BrawlerRankings';
     
     const Home = () => {
-    return (
-        <div>
-            <h1>BrawlStar</h1>
+        const navigate = useNavigate();
 
-            {BrawlerList?.length > 0
-                ?(
+        return (
             <div>
-           
-                {BrawlerList.map(brawler => (
-                <Brawler key = {brawler.id} {...brawler}/>
-                ))}
+                <h1>BrawlStar</h1>
+
+                {BrawlerList?.length > 0
+                    ?(
+                <div>
             
-            </div>): 
-            <div className='empty'>
-                <h2>No brawlers available</h2>
+                    {BrawlerList.map(brawler => (
+                    <Brawler key = {brawler.id} {...brawler}/>
+                    ))}
+                
+                </div>): 
+                <div className='empty'>
+                    <h2>No brawlers available</h2>
+                    </div>
+                }
+                <div>
+                    <button className='brawlerranking'onClick={() => navigate('./brawlerranking')}>go to the ranking</button>
                 </div>
-            }
-        </div>
-        
-    );
+            </div>
+            
+        );
 }
 
 export default Home;

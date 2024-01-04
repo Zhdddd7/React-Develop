@@ -1,26 +1,33 @@
-const BrawlerRating = require('./BrawlerRatingModel'); // The model file you just created
-const {connect} =require('./server');
 
+const {connect} =require('./server');
+const {calculateBrawlerRankings} = require('./ranking');
+const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');  
 const app = express();
 app.use(bodyParser.json());
-
+//By default, cors() enables CORS for all origins. 
+// If you want to restrict it to your frontend application only, you can configure it as follows:
+app.use(cors({ origin: 'http://localhost:3000' }));
 
 
 app.post('/rate-brawler', async (req, res) => {
     try{
-        // connect();
-        const { brawlerid, brawlerrating } = req.body;
-        BrawlerRating(brawlerid, brawlerrating);
+        console.log(req.body);
+        const {brawlerid, brawlerrating} =  req.body;
+        connect(brawlerid, brawlerrating);
        
     res.status(201).send(`Rating submitted successfully`);
     } catch (error) {
     res.status(500).send('Error submitting rating');
   }
+ });
 
+ 
+
+app.get('/brawler-rankings', async (req, res) => {
   
-  });
+});
 
   // Start the server
 const PORT = process.env.PORT || 5000;

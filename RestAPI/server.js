@@ -2,7 +2,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://haidongzheng:Zhd123456@dogcatcher.yyr7uwk.mongodb.net/?retryWrites=true&w=majority";
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 let db;
-const connect = async() => {
+const connect = async(brawlerid, brawlerrating) => {
     const client = new MongoClient(uri, {   
         serverApi: {
           version: ServerApiVersion.v1,
@@ -17,19 +17,27 @@ const connect = async() => {
       await client.db("dev").command({ ping: 1 });
       console.log("Pinged your deployment. You successfully connected to MongoDB!");
       db=client.db("dev");
+      const mycoll=db.collection('brawlerrating');
+      try{
+        const data= {brawlerid, brawlerrating};
+        
+        const result = await mycoll.insertOne(data);
+      return result;
+  } catch (err) {
+    console.error(err);
+  }
+
 
     } finally {
       // Ensures that the client will close when you finish/error
       await client.close();
     }
-  }
-
-  const getDb = () => {
-    return db;
   };
 
+  
 
-  module.exports = { connect, getDb };
+
+  module.exports = { connect };
 
 
 
