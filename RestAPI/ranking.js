@@ -28,7 +28,7 @@ const calculateBrawlerRankings = async() => {
   
     // Add MongoDB connection and collection logic here
     const { MongoClient, ServerApiVersion } = require('mongodb');
-    const uri = "mongodb+srv://haidongzheng:Zhd123456@dogcatcher.yyr7uwk.mongodb.net/?retryWrites=true&w=majority";
+    const uri = "ur_uri";
     // Create a MongoClient with a MongoClientOptions object to set the Stable API version
     let db;
     const connect = async(brawlerid, brawlerrating) => {
