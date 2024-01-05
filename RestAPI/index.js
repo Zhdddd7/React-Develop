@@ -1,6 +1,7 @@
 
 const {connect} =require('./server');
-const {calculateBrawlerRankings} = require('./ranking');
+const {Ranking} = require('./Ranking');
+
 const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');  
@@ -25,8 +26,13 @@ app.post('/rate-brawler', async (req, res) => {
 
  
 
-app.get('/brawler-rankings', async (req, res) => {
-  
+ app.post('/brawler-rankings', async (req, res) => {
+  try {
+    const rankingData = await Ranking(); 
+    res.status(201).json(rankingData); 
+  } catch (error) {
+    res.status(500).send('error occur');
+  }
 });
 
   // Start the server

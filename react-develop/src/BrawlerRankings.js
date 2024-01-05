@@ -6,9 +6,29 @@ const BrawlerRankings = () => {
 
   useEffect(() => {
     const fetchRankings = async () => {
-      const response = await fetch('http://localhost:5000/brawler-rankings');
-      const data = await response.json();
-      setRankings(data);
+      try {
+        const response = await fetch('http://192.168.1.177:5000/brawler-rankings', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          
+        });
+    
+        if (response.ok) {
+          console.log('Rating submitted successfully');
+          const data = await response.json();
+          setRankings(data);
+
+        } else {
+          console.error('Failed to submit rating');
+        }
+      } catch (error) {
+        console.error('Error submitting rating', error);
+      }
+
+      // const response = await fetch('http://localhost:5000/brawler-rankings');
+     
     };
 
     fetchRankings();
@@ -18,9 +38,9 @@ const BrawlerRankings = () => {
     <div>
       <h1>Brawler Rankings</h1>
       <ul>
-        {rankings.map((brawler) => (
+      {rankings.map((brawler) => (
           <li key={brawler._id}>
-            {brawler.name} - Rating: {brawler.rating}
+            {brawler._id} - Rating: {brawler.averageRating}
           </li>
         ))}
       </ul>

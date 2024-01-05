@@ -61,6 +61,33 @@ and we can start the monitoring using:
 ```
 nodemon your_filename.js
 ```
+
+## MonogoDB API 
+when connecting to a server, it is important to use async-await clause sentence properly, which means the steps cannot be executed synchronized. Some steps need to be done before going to the next step:
+```
+const connect = async(brawlerid, brawlerrating) => {
+    try {
+      // Connect the client to the server (optional starting in v4.7)
+      await client.connect();
+      // Send a ping to confirm a successful connection
+      await client.db("dev").command({ ping: 1 });
+      console.log("Pinged your deployment. You successfully connected to MongoDB!");
+      db=client.db("dev");
+      const mycoll=db.collection('brawlerrating');
+      try{
+        const data= {brawlerid, brawlerrating};
+        
+        const result = await mycoll.insertOne(data);
+      return result;
+  } catch (err) {
+    console.error(err);
+  }
+    } finally {
+      // Ensures that the client will close when you finish/error
+      await client.close();
+    }
+  };
+```
 ## Reference
 
 

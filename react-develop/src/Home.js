@@ -26,7 +26,7 @@ import BrawlerRankings from './BrawlerRankings';
                     </div>
                 }
                 <div>
-                    <button className='brawlerranking'onClick={() => navigate('./brawlerranking')}>go to the ranking</button>
+                    <button className='brawlerranking'onClick={() => navigate('./BrawlerRankings')}>go to the ranking</button>
                 </div>
             </div>
             
