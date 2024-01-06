@@ -117,7 +117,8 @@ When you click on the 'submit' button, it will send a POST request to the RESTAP
 ![display of database interface](demo/backend.png)   
 
 
-When you click on the 'go to the ranking' button, it will send a GET request to the RESTAPI and API will call the corresponding functions to retrieve the data from the database and through some data processings, show the overall rankings of the brawlers.
+When you click on the 'go to the ranking' button, it will send a GET request to the RESTAPI and API will call the corresponding functions to retrieve the data from the database and through some data processings, show the overall rankings of the brawlers.   
+
 ![display of database interface](demo/brawlerranking.png)   
 
 ## Summary
