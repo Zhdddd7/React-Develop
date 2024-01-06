@@ -1,49 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import BrawlerList from './BrawlerList';
+
 const BrawlerRankings = () => {
   const [rankings, setRankings] = useState([]);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchRankings = async () => {
-      try {
-        const response = await fetch('http://192.168.1.177:5000/brawler-rankings', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          
+  useEffect(() =>{
+    //this api may be different according to ur server type, PORT, and API name...
+    fetch('http://localhost:5000/brawler-rankings')
+      .then((response) => response.json())
+      .then((data) =>{
+        const mergedData = data.map((rank) => {
+          const brawler = BrawlerList.find((b) => b.id === rank._id);
+          return {
+            Name: brawler ? brawler.Name : 'Unknown',
+            averageRating: rank.averageRating,
+          };
         });
-    
-        if (response.ok) {
-          console.log('Rating submitted successfully');
-          const data = await response.json();
-          setRankings(data);
-
-        } else {
-          console.error('Failed to submit rating');
-        }
-      } catch (error) {
-        console.error('Error submitting rating', error);
-      }
-
-      // const response = await fetch('http://localhost:5000/brawler-rankings');
-     
-    };
-
-    fetchRankings();
+      setRankings(mergedData);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setRankings('Failed to fetch data.');
+      });
   }, []);
-
+  
+  
   return (
     <div>
       <h1>Brawler Rankings</h1>
-      <ul>
-      {rankings.map((brawler) => (
-          <li key={brawler._id}>
-            {brawler._id} - Rating: {brawler.averageRating}
-          </li>
-        ))}
-      </ul>
+      <table className='rankingtable'>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Average Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rankings.map((brawler, index) => (
+            <tr key={index}>
+              <td>{brawler.Name}</td>
+              <td>{brawler.averageRating.toFixed(2)}</td> {/* toFixed(2) for two decimal places */}
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <button className='backtomenu'onClick={() => navigate(-1)}>Back to Menu</button>
     </div>
   );
